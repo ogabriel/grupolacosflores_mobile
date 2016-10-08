@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo_app"
+    android:layout_margin="8dp"
+    tools:ignore="MissingConstraints">
+
+
+    <EditText
+        android:layout_width="352dp"
+        android:layout_height="56dp"
+        android:inputType="textPersonName"
+        android:text="@string/cliente"
+        android:ems="10"
+        tools:layout_editor_absoluteY="16dp"
+        android:id="@+id/edNPedidos"
+        android:shadowColor="#EE82EE"
+        android:elevation="17dp"
+        tools:ignore="Deprecated,LabelFor,RtlHardcoded,UnusedAttribute"
+        android:gravity="center_vertical|center"
+        android:typeface="monospace"
+        android:textStyle="bold"
+        android:singleLine="false"
+        android:selectAllOnFocus="false"
+        android:textSize="36sp"
+        android:layout_margin="8dp"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:text="@string/nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="16dp"
+        android:id="@+id/edNome"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="@+id/txtNome"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtNome"
+        app:layout_constraintVertical_bias="0.65999997" />
+
+    <TextView
+        android:text="@string/sobrenome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:id="@+id/edSobrenome"
+        tools:layout_editor_absoluteX="22dp"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toTopOf="@+id/txtSobrenome"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSobrenome" />
+
+    <TextView
+        android:text="@string/n_mero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:id="@+id/edNum"
+        android:layout_margin="8dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/txtNum"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintBottom_toBottomOf="@+id/txtNum"
+        app:layout_constraintTop_toTopOf="@+id/txtNum" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:layout_margin="8dp"
+        android:id="@+id/txtNum"
+        android:hint="@string/informe_o_n_mero"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="260dp"
+        android:padding="8dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/txtSobrenome"
+        android:hint="@string/informe_sobrenome"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="196dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        tools:layout_editor_absoluteY="131dp"
+        tools:layout_editor_absoluteX="161dp"
+        android:id="@+id/txtNome"
+        android:hint="@string/informe_seu_nome" />
+
+    <Button
+        android:text="@string/enviar"
+        android:layout_width="143dp"
+        android:layout_height="55dp"
+        android:id="@+id/btnEnvia"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="48dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtNum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintVertical_bias="0.65999997" />
+
+    <Button
+        android:text="@string/limpar"
+        android:layout_width="144dp"
+        android:layout_height="55dp"
+        android:id="@+id/btnLimpar"
+        app:layout_constraintRight_toLeftOf="@+id/btnEnvia"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnEnvia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintHorizontal_bias="0.63" />
+
+
+</android.support.constraint.ConstraintLayout>

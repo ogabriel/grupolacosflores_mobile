@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo_app"
+    tools:ignore="MissingConstraints">
+
+
+    <EditText
+        android:layout_width="352dp"
+        android:layout_height="56dp"
+        android:inputType="textPersonName"
+        android:text="@string/n_de_pedidos"
+        android:ems="10"
+        tools:layout_editor_absoluteY="16dp"
+        android:id="@+id/edNPedidos"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:shadowColor="#EE82EE"
+        android:elevation="17dp"
+        tools:ignore="Deprecated,LabelFor,RtlHardcoded,UnusedAttribute"
+        android:gravity="center_vertical|center"
+        android:typeface="monospace"
+        android:textStyle="bold"
+        android:singleLine="false"
+        android:selectAllOnFocus="false"
+        android:textSize="36sp" />
+
+    <ListView
+        android:layout_width="327dp"
+        android:layout_height="191dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/edNPedidos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintVertical_bias="0.100000024"
+        android:id="@+id/listViewPedidos" />
+
+    <ListView
+        android:layout_width="330dp"
+        android:layout_height="132dp"
+        android:id="@+id/listViewRastrear"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/listViewPedidos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintVertical_bias="0.25" />
+
+</android.support.constraint.ConstraintLayout>
+
