@@ -15,15 +15,19 @@
         app:srcCompat="@drawable/logo"
         android:id="@+id/imageView"
         tools:ignore="ContentDescription"
-        tools:layout_editor_absoluteY="24dp"
-        tools:layout_editor_absoluteX="115dp" />
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:text="Detalhe do Pedido"
-        android:layout_width="0dp"
+        android:text="Detalhe do pedido"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtTitulo"
-        android:textSize="36sp"
+        android:textSize="24sp"
         android:fontFamily="monospace"
         android:textStyle="bold"
         android:textAlignment="center"
@@ -34,41 +38,52 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.4" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
         android:text="Preço"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="395dp"
-        tools:layout_editor_absoluteX="10dp"
         android:textSize="20sp"
         android:textStyle="bold"
         android:id="@+id/txtPreco"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        app:layout_constraintTop_toTopOf="@+id/edtPreco"
+        app:layout_constraintBottom_toBottomOf="@+id/edtPreco"
+        app:layout_constraintRight_toLeftOf="@+id/edtPreco"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintVertical_bias="0.47000003"
+        app:layout_constraintLeft_toLeftOf="@+id/txtNOme" />
 
     <TextView
         android:text="Nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="318dp"
-        tools:layout_editor_absoluteX="9dp"
         android:textSize="20sp"
         android:textStyle="bold"
         android:id="@+id/txtNOme"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        app:layout_constraintTop_toTopOf="@+id/edtNome"
+        app:layout_constraintBottom_toBottomOf="@+id/edtNome"
+        app:layout_constraintRight_toLeftOf="@+id/edtNome"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintVertical_bias="0.57"
+        app:layout_constraintLeft_toLeftOf="@+id/txtCod"
+        app:layout_constraintHorizontal_bias="0.02" />
 
     <TextView
         android:text="Código"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="250dp"
-        tools:layout_editor_absoluteX="12dp"
         android:textSize="20sp"
         android:textStyle="bold"
         android:id="@+id/txtCod"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        app:layout_constraintTop_toTopOf="@+id/edtCodigo"
+        app:layout_constraintBottom_toBottomOf="@+id/edtCodigo"
+        app:layout_constraintRight_toLeftOf="@+id/edtCodigo"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintVertical_bias="0.47000003" />
 
     <EditText
         android:layout_width="0dp"
@@ -76,42 +91,34 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/edtCodigo"
-        android:hint="Codigo"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="40dp"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
-        android:layout_marginStart="32dp"
-        app:layout_constraintLeft_toRightOf="@+id/txtCod" />
+        android:hint="@string/codigo"
+        tools:layout_editor_absoluteY="172dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <EditText
-        android:layout_width="303dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/edtNome"
         android:hint="Nome"
         tools:ignore="HardcodedText"
-        android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@+id/edtCodigo"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        android:layout_marginStart="8dp"
-        app:layout_constraintLeft_toRightOf="@+id/txtNOme" />
+        tools:layout_editor_absoluteY="230dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <EditText
-        android:layout_width="303dp"
-        android:layout_height="47dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/edtPreco"
         android:hint="Preço"
         tools:ignore="HardcodedText"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        android:layout_marginStart="8dp"
-        app:layout_constraintLeft_toRightOf="@+id/txtPreco"
-        android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@+id/edtNome" />
+        tools:layout_editor_absoluteY="297dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
         android:text="Encerrar"
@@ -122,12 +129,9 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginStart="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="40dp"
-        app:layout_constraintTop_toBottomOf="@+id/edtPreco"
         tools:ignore="HardcodedText"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintVertical_bias="0.43"
+        android:layout_marginBottom="48dp"
         android:background="@color/colorPrimary"/>
 
 </android.support.constraint.ConstraintLayout>

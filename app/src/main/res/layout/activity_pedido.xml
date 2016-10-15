@@ -10,8 +10,8 @@
 
 
     <TextView
-        android:layout_width="352dp"
-        android:layout_height="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:text="@string/n_de_pedidos"
         android:ems="10"
@@ -23,7 +23,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:shadowColor="#EE82EE"
         android:elevation="17dp"
-        tools:ignore="Deprecated,LabelFor,RtlHardcoded,UnusedAttribute"
+        tools:ignore="Deprecated,LabelFor,RtlHardcoded,TextViewEdits,UnusedAttribute"
         android:gravity="center_vertical|center"
         android:typeface="monospace"
         android:textStyle="bold"
