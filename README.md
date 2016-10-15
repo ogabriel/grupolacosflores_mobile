@@ -1,4 +1,4 @@
-<img style="width:100%;" src="github-banner.png">
+﻿<img style="width:100%;" src="github-banner.png">
 
 Sistema de gerenciamento de terceiros
 =================
@@ -28,4 +28,6 @@ Partes do projeto
 -----------
 
 * **Aplicação WEB:** [CLIQUE AQUI](https://github.com/gabrieloliver98/grupolacosflores_WEB)
+* **Front-end WEB** [CLIQUE AQUI](https://github.com/gabrieloliver98/grupolacosflores_front)
 * **Aplicativo Mobile(Android)**  [CLIQUE AQUI](https://github.com/gabrieloliver98/grupolacosflores_mobile)
+
