@@ -20,5 +20,12 @@
     <string name="c_digo">Código</string>
     <string name="cliente">Cliente</string>
     <string name="codigo">Codigo</string>
+    <string name="numero">Número</string>
+    <string name="senha">Senha</string>
+    <string name="voltar">Voltar</string>
+    <string name="encerrar_pedido">Encerrar pedido</string>
+    <string name="nome_do_cliente">Nome do cliente</string>
+    <string name="numero_do_dispositivo">Número do dispositivo</string>
+    <string name="btn_voltar">Voltar</string>
 
 </resources>
