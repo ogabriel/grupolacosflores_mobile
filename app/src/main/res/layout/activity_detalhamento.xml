@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtTitulo"
         android:textSize="24sp"
-        android:fontFamily="monospace"
+        android:fontFamily="roboto"
         android:textStyle="bold"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
@@ -41,21 +41,6 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
-        android:text="Preço"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:id="@+id/txtPreco"
-        tools:ignore="HardcodedText"
-        app:layout_constraintTop_toTopOf="@+id/edtPreco"
-        app:layout_constraintBottom_toBottomOf="@+id/edtPreco"
-        app:layout_constraintRight_toLeftOf="@+id/edtPreco"
-        android:layout_marginEnd="40dp"
-        app:layout_constraintVertical_bias="0.47000003"
-        app:layout_constraintLeft_toLeftOf="@+id/txtNOme" />
-
-    <TextView
         android:text="Nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,13 +48,25 @@
         android:textStyle="bold"
         android:id="@+id/txtNOme"
         tools:ignore="HardcodedText"
-        app:layout_constraintTop_toTopOf="@+id/edtNome"
-        app:layout_constraintBottom_toBottomOf="@+id/edtNome"
-        app:layout_constraintRight_toLeftOf="@+id/edtNome"
+        app:layout_constraintTop_toTopOf="@+id/edNome"
+        app:layout_constraintBottom_toBottomOf="@+id/edNome"
+        app:layout_constraintRight_toLeftOf="@+id/edNome"
         android:layout_marginEnd="40dp"
         app:layout_constraintVertical_bias="0.57"
         app:layout_constraintLeft_toLeftOf="@+id/txtCod"
         app:layout_constraintHorizontal_bias="0.02" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/edNome"
+        android:hint="Nome"
+        tools:ignore="HardcodedText"
+        tools:layout_editor_absoluteY="230dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:text="Código"
@@ -79,9 +76,9 @@
         android:textStyle="bold"
         android:id="@+id/txtCod"
         tools:ignore="HardcodedText"
-        app:layout_constraintTop_toTopOf="@+id/edtCodigo"
-        app:layout_constraintBottom_toBottomOf="@+id/edtCodigo"
-        app:layout_constraintRight_toLeftOf="@+id/edtCodigo"
+        app:layout_constraintTop_toTopOf="@+id/edCodigo"
+        app:layout_constraintBottom_toBottomOf="@+id/edCodigo"
+        app:layout_constraintRight_toLeftOf="@+id/edCodigo"
         android:layout_marginEnd="32dp"
         app:layout_constraintVertical_bias="0.47000003" />
 
@@ -90,49 +87,61 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/edtCodigo"
+        android:id="@+id/edCodigo"
         android:hint="@string/codigo"
         tools:layout_editor_absoluteY="172dp"
         android:layout_marginEnd="40dp"
         app:layout_constraintRight_toRightOf="parent" />
 
-    <EditText
+    <TextView
+        android:text="Preço"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/edtNome"
-        android:hint="Nome"
-        tools:ignore="HardcodedText"
-        tools:layout_editor_absoluteY="230dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:id="@+id/txtPreco"
+        tools:ignore="HardcodedText,UnknownIdInLayout"
+        app:layout_constraintTop_toTopOf="@+id/edPreco"
+        app:layout_constraintBottom_toBottomOf="@+id/edPreco"
+        app:layout_constraintRight_toLeftOf="@+id/edPreco"
         android:layout_marginEnd="40dp"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintVertical_bias="0.47000003"
+        app:layout_constraintLeft_toLeftOf="@+id/txtNome" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/edtPreco"
+        android:id="@+id/edPreco"
         android:hint="Preço"
         tools:ignore="HardcodedText"
         tools:layout_editor_absoluteY="297dp"
         android:layout_marginEnd="40dp"
         app:layout_constraintRight_toRightOf="parent" />
 
+
     <Button
         android:text="Encerrar"
-        android:layout_width="181dp"
-        android:layout_height="wrap_content"
+        android:layout_width="144dp"
+        android:layout_height="55dp"
         android:id="@+id/btnEncerrar"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginStart="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         tools:ignore="HardcodedText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="48dp"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/btnVoltar"
+        app:layout_constraintTop_toTopOf="@+id/btnVoltar" />
+
+    <Button
+        android:text="@string/voltar"
+        android:layout_width="144dp"
+        android:layout_height="55dp"
+        android:id="@+id/btnVoltar"
+        tools:layout_editor_absoluteY="376dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@color/colorPrimary" />
 
 </android.support.constraint.ConstraintLayout>
 
