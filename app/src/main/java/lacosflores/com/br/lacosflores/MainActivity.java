@@ -15,9 +15,13 @@ import static lacosflores.com.br.lacosflores.R.menu.home_pedido;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button btnLog = (Button)findViewById(R.id.btnLog);
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+
 }
