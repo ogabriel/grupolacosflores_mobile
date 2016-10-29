@@ -28,5 +28,6 @@
     <string name="nome_do_cliente">Nome do cliente</string>
     <string name="numero_do_dispositivo">Número do dispositivo</string>
     <string name="btn_voltar">Voltar</string>
+    <string name="Login">Login</string>
 
 </resources>

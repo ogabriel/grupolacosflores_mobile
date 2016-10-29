@@ -67,7 +67,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:text="Login"
+        android:text="@string/Login"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:id="@+id/btnLog"
@@ -82,7 +82,7 @@
         android:layout_marginEnd="64dp"
         android:background="@color/colorPrimary"
         app:layout_constraintVertical_bias="0.38"
-        />
+        tools:onClick="onClick" />
 
     <ImageView
         android:layout_width="wrap_content"
