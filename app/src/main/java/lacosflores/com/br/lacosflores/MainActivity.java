@@ -15,23 +15,9 @@ import static lacosflores.com.br.lacosflores.R.menu.home_pedido;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editLogin, editSenha;
-    Button btnOk;
-    TextView edNPedidos;
-    Intent pedido = new Intent(MainActivity.this, Controle.class);
-
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        editLogin = (EditText) findViewById(R.id.editUser);
-        editSenha = (EditText) findViewById(R.id.editSenha);
-        editLogin.setActivated(true);
-        btnOk = (Button)findViewById(R.id.btnLog);
-        edNPedidos = (TextView) findViewById(R.id.edNPedidos);
-
-
-
     }
 }
