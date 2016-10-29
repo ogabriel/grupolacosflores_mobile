@@ -119,11 +119,11 @@
         app:layout_constraintBottom_toBottomOf="@+id/txtSenha"
         android:layout_marginStart="56dp"
         app:layout_constraintLeft_toRightOf="@+id/txtSenha"
-        />
+        app:layout_constraintVertical_bias="0.36" />
 
 
     <Button
-        android:text="Encerrar"
+        android:text="Confirmar"
         android:layout_width="144dp"
         android:layout_height="55dp"
         android:id="@+id/btnEncerrar"
