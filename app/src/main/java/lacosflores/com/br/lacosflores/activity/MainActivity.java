@@ -1,28 +1,28 @@
-package lacosflores.com.br.lacosflores;
+package lacosflores.com.br.lacosflores.activity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import static lacosflores.com.br.lacosflores.R.menu.activity_home_drawer;
-import static lacosflores.com.br.lacosflores.R.menu.home_pedido;
+import lacosflores.com.br.lacosflores.R;
 
 public class MainActivity extends AppCompatActivity{
-
-    Button btnLog = (Button)findViewById(R.id.btnLog);
-    EditText edNum = (EditText)findViewById(R.id.edNumero);
-    EditText edCod = (EditText)findViewById(R.id.edCodigo);
+    private EditText edNum;
+    private EditText edCod;
+    private Button btnLog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        btnLog = (Button)findViewById(R.id.btnLog);
+        edNum = (EditText)findViewById(R.id.edNumero);
+        edCod = (EditText)findViewById(R.id.edCodigo);
 
         btnLog.setOnClickListener(new View.OnClickListener() {
             @Override

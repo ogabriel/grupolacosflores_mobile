@@ -1,8 +1,9 @@
-package lacosflores.com.br.lacosflores;
+package lacosflores.com.br.lacosflores.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import lacosflores.com.br.lacosflores.R;
 
 
 public class FormularioActivity extends AppCompatActivity {

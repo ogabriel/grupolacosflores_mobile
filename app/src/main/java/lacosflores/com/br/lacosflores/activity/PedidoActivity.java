@@ -1,4 +1,4 @@
-package lacosflores.com.br.lacosflores;
+package lacosflores.com.br.lacosflores.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
-import lacosflores.com.br.lacosflores.DetalhamentoActivity;
+
+import lacosflores.com.br.lacosflores.R;
 
 /**
  * Created by SENAI on 29/10/2016.

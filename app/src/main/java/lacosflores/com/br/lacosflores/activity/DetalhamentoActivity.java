@@ -1,4 +1,4 @@
-package lacosflores.com.br.lacosflores;
+package lacosflores.com.br.lacosflores.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import lacosflores.com.br.lacosflores.R;
 
 public class DetalhamentoActivity extends AppCompatActivity {
 
