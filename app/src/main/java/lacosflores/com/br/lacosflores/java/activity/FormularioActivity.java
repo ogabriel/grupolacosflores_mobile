@@ -1,4 +1,4 @@
-package lacosflores.com.br.lacosflores.activity;
+package lacosflores.com.br.lacosflores.java.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
