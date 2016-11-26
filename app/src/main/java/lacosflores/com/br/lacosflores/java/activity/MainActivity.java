@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.wifi.WifiManager;
+import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        StrictMode.ThreadPolicy.Builder regras = new StrictMode.ThreadPolicy.Builder();
+        regras.detectAll();
+        StrictMode.setThreadPolicy(regras.build());
 
         btnLog = (Button) findViewById(R.id.btnLog);
         edNum = (EditText) findViewById(R.id.edImei);

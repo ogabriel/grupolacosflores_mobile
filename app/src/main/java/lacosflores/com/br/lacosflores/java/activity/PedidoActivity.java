@@ -1,9 +1,16 @@
 package lacosflores.com.br.lacosflores.java.activity;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,6 +26,7 @@ import java.io.Reader;
 import java.net.URI;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 import lacosflores.com.br.lacosflores.R;
@@ -34,41 +42,49 @@ import lacosflores.com.br.lacosflores.java.model.Pedido;
 public class PedidoActivity extends AppCompatActivity {
 
     private ListView lstPedido;
-    Pedido pedidosConsultado;
+    private List<Apiary> listApiary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedido);
 
-        Log.d("LAÇOS", "criou a activiry");
+        lstPedido = (ListView) findViewById(R.id.listViewPedidos);
 
-    }
-
-    public static Apiary apiary() throws Exception {
-
-        Apiary apiaryEncontrado = null;
-
-        //Define URL
-        URL endereco = new URL("http://polls.apiblueprint.org/questions");
-        //Consome Web-Services
-        Scanner leitor = new Scanner(endereco.openConnection().getInputStream());
-
-        StringBuilder stringGrande = new StringBuilder();
-
-        while (leitor.hasNextLine()) {
-            //Devolve verdadeiro se chegar no fim
-            stringGrande.append(leitor.nextLine());
+        try {
+            preencheList();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-        leitor.close();
-
-        Gson conversor = new Gson();
-        apiaryEncontrado = conversor.fromJson(stringGrande.toString(), Apiary.class);
-
-        return apiaryEncontrado;
     }
 
+    public void preencheList() throws Exception{
+        ApiaryDAO consulta = new ApiaryDAO();
 
+        ArrayAdapter<Apiary> adaptador =
+                new ArrayAdapter<Apiary>(this, android.R.layout.simple_list_item_1, consulta.sendGet());
+
+        lstPedido.setAdapter(adaptador);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        for (int resultado : grantResults) {
+            if (resultado == PackageManager.PERMISSION_DENIED) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+                builder.setTitle("Sem conceder a permissão o app não funcionará");
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        }
+    }
 
 }
