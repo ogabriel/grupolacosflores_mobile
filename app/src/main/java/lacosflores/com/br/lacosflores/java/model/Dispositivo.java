@@ -1,5 +1,7 @@
 package lacosflores.com.br.lacosflores.java.model;
 
+import java.util.List;
+
 /**
  * Created by SENAI on 05/11/2016.
  */
@@ -7,13 +9,23 @@ package lacosflores.com.br.lacosflores.java.model;
 public class Dispositivo {
     private String id;
     private String imei;
-    private Filial filial;
+    private String senha;
 
-    public String getIdDispositivo() {
+    private List<Floricultura> floricultura;
+
+    public List<Floricultura> getFilial() {
+        return floricultura;
+    }
+
+    public void setFilial(List<Floricultura> floricultura) {
+        this.floricultura = floricultura;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setIdDispositivo(String id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -25,20 +37,11 @@ public class Dispositivo {
         this.imei = imei;
     }
 
-    public Filial getFilial() {
-        return filial;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setFilial(Filial filial) {
-        this.filial = filial;
-    }
-
-    @Override
-    public String toString() {
-        return "Dispositivo{" +
-                "idDispositivo='" + id + '\'' +
-                ", imei='" + imei + '\'' +
-                ", filial='" + filial + '\'' +
-                '}';
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }

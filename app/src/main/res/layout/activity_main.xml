@@ -28,7 +28,7 @@
         android:id="@+id/txtUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="IMEI"
+        android:text="@string/imei"
         android:textSize="20sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="16dp"
@@ -94,5 +94,21 @@
         android:background="@color/colorPrimary"
         app:layout_constraintVertical_bias="0.38"
         android:onClick="loginClick"/>
+
+    <TextView
+        android:text="@string/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtErro"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnLog"
+        android:textColor="@color/colorErro"/>
 
 </android.support.constraint.ConstraintLayout>

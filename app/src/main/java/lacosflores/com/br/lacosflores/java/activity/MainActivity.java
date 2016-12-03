@@ -18,14 +18,25 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import lacosflores.com.br.lacosflores.R;
+import lacosflores.com.br.lacosflores.java.dao.DispositivoDAO;
+import lacosflores.com.br.lacosflores.java.model.Dispositivo;
 import lacosflores.com.br.lacosflores.java.util.Permissoes;
 
 public class MainActivity extends AppCompatActivity {
     private EditText edNum;
-    private EditText edCod;
+    private EditText edSenha;
+    private TextView txtErro;
     private Button btnLog;
+    private DispositivoDAO disp;
+    private Dispositivo dispositivos;
+    private String IMEI;
+    private String imeiJson;
+    private String senhaJson;
+    private String senhaTela;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
         btnLog = (Button) findViewById(R.id.btnLog);
         edNum = (EditText) findViewById(R.id.edImei);
-        edCod = (EditText) findViewById(R.id.edCodigo);
+        edSenha = (EditText) findViewById(R.id.editSenha);
+        txtErro = (TextView) findViewById(R.id.txtErro);
 
         // Permissões
         String[] permissoes = new String[]{
@@ -46,19 +58,44 @@ public class MainActivity extends AppCompatActivity {
         };
 
         Permissoes.checarPermissao(this, 1, permissoes);
+
+        disp = new DispositivoDAO();
+        dispositivos = new Dispositivo();
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        String IMEI = getIMEI(this);
+        IMEI = getIMEI(this);
         edNum.setText(IMEI);
+
+        try {
+            dispositivos = disp.dispositivoImei();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        imeiJson = dispositivos.getImei();
+        senhaJson = dispositivos.getSenha();
+
+//        if (!imeiJson.equals(IMEI))
+        if(!imeiJson.equals("354101072371071"))
+        {
+            txtErro.setVisibility(View.VISIBLE);
+            txtErro.setText("IMEI não cadastrado! Solicitar cadastro.");
+            btnLog.setEnabled(false);
+        }
     }
 
     public void loginClick(View view) {
-        Intent intent = new Intent(MainActivity.this, PedidoActivity.class);
-        startActivity(intent);
+        if(!senhaJson.equals(edSenha.getText().toString())){
+            Toast.makeText(MainActivity.this, "Usuário ou senha inválido", Toast.LENGTH_SHORT).show();
+        }else{
+            Intent intent = new Intent(MainActivity.this, PedidoActivity.class);
+            startActivity(intent);
+        }
     }
 
     private String getIMEI(Activity activity) {

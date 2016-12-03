@@ -1,5 +1,6 @@
 package lacosflores.com.br.lacosflores.java.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
 
 public class Floricultura {
     private String id;
-    private List<Pedido> pedidos;
+    private ArrayList<Pedido> pedidos;
 
     public String getId() {
         return id;
@@ -18,11 +19,11 @@ public class Floricultura {
         this.id = id;
     }
 
-    public List<Pedido> getPedidos() {
+    public ArrayList<Pedido> getPedidos() {
         return pedidos;
     }
 
-    public void setPedidos(List<Pedido> pedidos) {
+    public void setPedidos(ArrayList<Pedido> pedidos) {
         this.pedidos = pedidos;
     }
 
